@@ -1,0 +1,834 @@
+/* ========================================
+   bill4skyy Portfolio - Custom CSS
+   ======================================== */
+
+/* ===== CSS Variables ===== */
+
+:root {
+    --dark-900: #0a0a0f;
+    --dark-800: #12121a;
+    --dark-700: #1a1a2e;
+    --accent-primary: #6c5ce7;
+    --accent-secondary: #a29bfe;
+    --neon-blue: #00d4ff;
+    --neon-purple: #b24bff;
+    --neon-pink: #ff6b9d;
+}
+
+/* ===== Base Styles ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::selection {
+    background: var(--accent-primary);
+    color: white;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dark-900);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-primary);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-secondary);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ===== Preloader ===== */
+
+.loader-ring {
+    width: 50px;
+    height: 50px;
+    border: 3px solid transparent;
+    border-top-color: var(--accent-primary);
+    border-right-color: var(--neon-purple);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    position: relative;
+}
+
+.loader-ring::before {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    border: 3px solid transparent;
+    border-bottom-color: var(--neon-blue);
+    border-left-color: var(--neon-pink);
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite reverse;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ===== Custom Cursor ===== */
+
+.custom-cursor {
+    width: 8px;
+    height: 8px;
+    background: var(--accent-primary);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s, height 0.2s, background 0.2s;
+}
+
+.custom-cursor-follower {
+    width: 35px;
+    height: 35px;
+    border: 1.5px solid var(--accent-primary);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s, border-color 0.3s, opacity 0.3s;
+    opacity: 0.5;
+}
+
+.cursor-hover {
+    width: 12px;
+    height: 12px;
+    background: var(--neon-blue);
+    mix-blend-mode: difference;
+}
+
+.follower-hover {
+    width: 50px;
+    height: 50px;
+    border-color: var(--neon-blue);
+    opacity: 0.3;
+}
+
+/* ===== Navbar ===== */
+
+.navbar-scrolled {
+    background: rgba(10, 10, 15, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--accent-primary);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* ===== Hero Section ===== */
+
+.gradient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.15;
+}
+
+.orb-1 {
+    width: 500px;
+    height: 500px;
+    background: var(--accent-primary);
+    top: -200px;
+    right: -100px;
+    animation: float-orb 8s ease-in-out infinite;
+}
+
+.orb-2 {
+    width: 400px;
+    height: 400px;
+    background: var(--neon-purple);
+    bottom: -150px;
+    left: -100px;
+    animation: float-orb 10s ease-in-out infinite reverse;
+}
+
+.orb-3 {
+    width: 300px;
+    height: 300px;
+    background: var(--neon-blue);
+    top: 50%;
+    left: 50%;
+    animation: float-orb 12s ease-in-out infinite 2s;
+}
+
+@keyframes float-orb {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    25% {
+        transform: translate(30px, -40px) scale(1.05);
+    }
+
+    50% {
+        transform: translate(-20px, 20px) scale(0.95);
+    }
+
+    75% {
+        transform: translate(40px, 30px) scale(1.02);
+    }
+}
+
+.grid-bg {
+    background-image:
+        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 60px 60px;
+}
+
+.hero-name {
+    background: linear-gradient(
+        135deg,
+        #ffffff 0%,
+        var(--accent-secondary) 50%,
+        var(--neon-blue) 100%
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.text-gradient {
+    background: linear-gradient(
+        135deg,
+        var(--accent-primary),
+        var(--neon-blue)
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+
+/* ========================================
+   PROFILE RING
+======================================== */
+
+.profile-ring {
+    width: 480px;
+    height: 480px;
+
+    background: conic-gradient(
+        var(--accent-primary),
+        var(--neon-purple),
+        var(--neon-pink),
+        var(--neon-blue),
+        var(--accent-primary)
+    );
+
+    animation: ring-rotate 4s linear infinite;
+    padding: 4px;
+
+    border-radius: 50%;
+    position: relative;
+    flex-shrink: 0;
+}
+
+@keyframes ring-rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.profile-ring::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+
+    background: conic-gradient(
+        var(--accent-primary),
+        var(--neon-purple),
+        var(--neon-pink),
+        var(--neon-blue),
+        var(--accent-primary)
+    );
+
+    border-radius: 50%;
+    filter: blur(15px);
+    opacity: 0.5;
+
+    animation: ring-rotate 4s linear infinite;
+    z-index: -1;
+}
+
+
+/* ===== Floating Elements ===== */
+
+.floating-element {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* ===== Scroll Dot ===== */
+
+@keyframes scroll-dot {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(8px);
+        opacity: 0;
+    }
+}
+
+.animate-scroll-dot {
+    animation: scroll-dot 1.5s ease-in-out infinite;
+}
+
+/* ===== Typewriter Cursor ===== */
+
+.typewriter-cursor {
+    animation: blink 0.8s ease-in-out infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* ===== About Section ===== */
+
+.about-image-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.about-image-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        var(--accent-primary) 0%,
+        transparent 50%
+    );
+    opacity: 0.2;
+    z-index: 1;
+}
+
+/* ===== Skill Cards ===== */
+
+.skill-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--accent-primary),
+        transparent
+    );
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.skill-card:hover::before {
+    opacity: 1;
+}
+
+.skill-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+
+    background: radial-gradient(
+        circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        rgba(108, 92, 231, 0.06),
+        transparent 50%
+    );
+
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.skill-card:hover::after {
+    opacity: 1;
+}
+
+
+/* ===== Portfolio Items ===== */
+
+.portfolio-item {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.portfolio-item:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.portfolio-item:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.portfolio-item:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.portfolio-item:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.portfolio-item:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+.portfolio-item:nth-child(6) {
+    animation-delay: 0.5s;
+}
+
+
+/* ===== Scroll Animations ===== */
+
+[data-animate] {
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-animate="fade-up"] {
+    transform: translateY(40px);
+}
+
+[data-animate="fade-right"] {
+    transform: translateX(-40px);
+}
+
+[data-animate="fade-left"] {
+    transform: translateX(40px);
+}
+
+[data-animate].animated {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ===== Glow Effects ===== */
+
+.glow-text {
+    text-shadow:
+        0 0 20px rgba(108, 92, 231, 0.5),
+        0 0 40px rgba(108, 92, 231, 0.3);
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 768px) {
+
+    .gradient-orb {
+        opacity: 0.08;
+    }
+
+    .orb-1 {
+        width: 300px;
+        height: 300px;
+    }
+
+    .orb-2 {
+        width: 250px;
+        height: 250px;
+    }
+
+    .orb-3 {
+        width: 200px;
+        height: 200px;
+    }
+
+    .custom-cursor,
+    .custom-cursor-follower {
+        display: none !important;
+    }
+
+    /* Profile ring responsive */
+    .profile-ring {
+        width: min(85vw, 480px);
+        height: min(85vw, 480px);
+    }
+}
+
+
+/* ===== Focus Styles (Accessibility) ===== */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
+}
+
+
+/* ===== Hover Card Glow ===== */
+
+.skill-card,
+.portfolio-item > div {
+    transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        0 0 30px rgba(108, 92, 231, 0.1);
+}
+
+
+/* ===== Noise Texture Overlay ===== */
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http\://www\.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter' %3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+
+    opacity: 0.015;
+    pointer-events: none;
+    z-index: 9998;
+}
+
+
+/* ===== Smooth Page Transitions ===== */
+
+.page-transition {
+    animation: pageIn 0.5s ease;
+}
+
+@keyframes pageIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* ========================================
+   FIX: Chrome Chain Logo in Navbar
+======================================== */
+
+.navbar-logo {
+    display: block !important;
+    width: 150px !important;
+    height: auto !important;
+    max-width: 42vw;
+    object-fit: contain;
+    object-position: left center;
+    flex: 0 0 auto;
+}
+
+@media (max-width: 768px) {
+
+    .navbar-logo {
+        width: 125px !important;
+        max-width: 42vw;
+    }
+}
+
+
+/* ========================================
+   Navbar Logo Spin Animation
+======================================== */
+
+/* Logo berputar satu putaran setiap 8 detik dengan transisi halus. */
+
+.navbar-logo {
+    transform-origin: center center;
+    animation: bill4skyy-logo-spin 8s ease-in-out infinite;
+    will-change: transform;
+}
+
+/* Saat pointer diarahkan ke logo, putaran dipercepat. */
+
+.navbar-logo:hover {
+    animation-duration: 2s;
+}
+
+@keyframes bill4skyy-logo-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Hormati pengaturan reduced motion milik pengguna. */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .navbar-logo {
+        animation: none;
+    }
+}
+
+
+/* ========================================
+   BILL4SKYY HERO - YOUTUBE VIDEO BACKGROUND
+======================================== */
+
+#hero {
+    isolation: isolate;
+    background: #050509;
+}
+
+.hero-video-background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+    background: #050509;
+}
+
+.hero-video-background iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 100vw;
+    height: 56.25vw;
+
+    min-width: 177.78vh;
+    min-height: 100vh;
+
+    transform: translate(-50%, -50%);
+    border: 0;
+    pointer-events: none;
+}
+
+.hero-video-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 5, 9, 0.88) 0%,
+            rgba(5, 5, 9, 0.62) 48%,
+            rgba(5, 5, 9, 0.48) 100%
+        ),
+
+        linear-gradient(
+            0deg,
+            rgba(5, 5, 9, 0.72) 0%,
+            transparent 45%,
+            rgba(5, 5, 9, 0.40) 100%
+        );
+}
+
+
+/* Keep hero content above the video and overlay. */
+
+#hero > .relative.z-10 {
+    z-index: 2;
+}
+
+
+/* On small screens, darken the footage slightly for text legibility. */
+
+@media (max-width: 768px) {
+
+    .hero-video-overlay {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(5, 5, 9, 0.78),
+                rgba(5, 5, 9, 0.62)
+            ),
+
+            linear-gradient(
+                0deg,
+                rgba(5, 5, 9, 0.75),
+                rgba(5, 5, 9, 0.35)
+            );
+    }
+}
+
+
+/* Respect reduced-motion preferences. */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hero-video-background {
+        display: none;
+    }
+
+    #hero {
+        background: #0a0a0f;
+    }
+}
+
+
+/* ========================================
+   BILL4SKYY - HERO CHROME CHAIN WORDMARK
+======================================== */
+
+.hero-name-image {
+    display: block;
+    width: min(100%, 410px);
+    height: auto;
+    object-fit: contain;
+    object-position: left center;
+    margin-top: 0.35rem;
+    margin-bottom: 0.15rem;
+
+    filter: drop-shadow(
+        0 8px 22px rgba(0, 0, 0, 0.38)
+    );
+}
+
+
+/* Responsive hero wordmark */
+
+@media (max-width: 640px) {
+
+    .hero-name-image {
+        width: min(100%, 340px);
+    }
+}
+
+@media (max-width: 380px) {
+
+    .hero-name-image {
+        width: min(100%, 290px);
+    }
+}
+
+
+/* ========================================
+   BILL4SKYY - DJ ARTWORK INSIDE PROFILE CIRCLE
+======================================== */
+
+/* Keep the supplied DJ artwork clipped inside the circular frame. */
+
+.profile-ring > .profile-ring-inner {
+    position: absolute;
+    inset: 4px;
+
+    overflow: hidden;
+    border-radius: 50%;
+
+    background: var(--dark-700);
+
+    animation: profile-image-counter-spin 4s linear infinite;
+}
+
+
+/* Keep the image fully visible within the circle. */
+
+.profile-dj-image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center;
+
+    padding: 0;
+}
+
+
+/* The outer gradient ring spins clockwise; counter-spin the image holder
+   so the DJ illustration itself remains upright. */
+
+@keyframes profile-image-counter-spin {
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+
+/* Reduced motion: keep the artwork still. */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .profile-ring {
+        animation: none;
+    }
+
+    .profile-ring > .profile-ring-inner {
+        animation: none;
+    }
+}
