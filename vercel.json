@@ -1,20 +1,14 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "version": 2,
+
   "builds": [
     {
       "src": "api/index.php",
       "use": "vercel-php@0.9.0"
-    },
-    {
-      "src": "assets/**",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "style.css",
-      "use": "@vercel/static"
     }
   ],
+
   "routes": [
     {
       "src": "/assets/(.*)",
