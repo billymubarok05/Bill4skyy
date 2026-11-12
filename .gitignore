@@ -1,14 +1,8 @@
-# VS Code
 .vscode/
-
-# Vercel
 .vercel/
 
-# Environment
 .env
 .env.*
 !.env.example
 
-# Video
-# Jangan abaikan video karena video sekarang sudah dikompres
-# dan akan di-deploy bersama project.
+# JANGAN masukkan assets/img/video/

@@ -456,7 +456,7 @@ $contacts = [
             loop
             playsinline
             preload="auto"
-            poster="assets/img/about-bill4skyy.jpg"
+            poster="/assets/img/about-bill4skyy.jpg"
         >
 
             <source

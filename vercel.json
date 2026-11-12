@@ -14,14 +14,6 @@
     {
       "source": "/",
       "destination": "/api/index.php"
-    },
-    {
-      "source": "/assets/(.*)",
-      "destination": "/assets/$1"
-    },
-    {
-      "source": "/style.css",
-      "destination": "/style.css"
     }
   ]
 }
