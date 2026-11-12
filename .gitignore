@@ -1,8 +1,14 @@
+# VS Code
 .vscode/
+
+# Vercel
 .vercel/
+
+# Environment
 .env
 .env.*
-
 !.env.example
 
-assets/img/video/hero-background.mp4
+# Video
+# Jangan abaikan video karena video sekarang sudah dikompres
+# dan akan di-deploy bersama project.

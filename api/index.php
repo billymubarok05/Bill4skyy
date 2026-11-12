@@ -460,7 +460,7 @@ $contacts = [
         >
 
             <source
-                src="https://URL-R2-KAMU/hero-background.mp4"
+                src="/assets/img/video/hero-background.mp4"
                 type="video/mp4"
             >
 

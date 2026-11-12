@@ -1,13 +1,14 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "version": 2,
+  "cleanUrls": true,
+  "trailingSlash": false,
 
-  "builds": [
-    {
-      "src": "api/index.php",
-      "use": "vercel-php@0.9.0"
+  "functions": {
+    "api/index.php": {
+      "runtime": "vercel-php@0.9.0"
     }
-  ],
+  },
 
   "routes": [
     {
