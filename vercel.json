@@ -10,18 +10,18 @@
     }
   },
 
-  "routes": [
+  "rewrites": [
     {
-      "src": "/assets/(.*)",
-      "dest": "/assets/$1"
+      "source": "/",
+      "destination": "/api/index.php"
     },
     {
-      "src": "/style.css",
-      "dest": "/style.css"
+      "source": "/assets/(.*)",
+      "destination": "/assets/$1"
     },
     {
-      "src": "/(.*)",
-      "dest": "/api/index.php"
+      "source": "/style.css",
+      "destination": "/style.css"
     }
   ]
 }
