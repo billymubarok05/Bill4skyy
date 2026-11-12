@@ -1,0 +1,8 @@
+.vscode/
+.vercel/
+.env
+.env.*
+
+!.env.example
+
+assets/img/video/hero-background.mp4
